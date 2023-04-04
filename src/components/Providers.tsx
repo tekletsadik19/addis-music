@@ -2,13 +2,10 @@
 import { ReactNode } from "react";
 import {ThemeProvider} from "next-themes";
 import { SessionProvider } from "next-auth/react";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
 
-const Providers = async ({children}:{children:ReactNode}) => {
-    const session = await getServerSession(authOptions);
+const Providers =  ({children}:{children:ReactNode}) => {
     return <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <SessionProvider session={session}>
+        <SessionProvider>
             {children}
         </SessionProvider>
     </ThemeProvider> ;
