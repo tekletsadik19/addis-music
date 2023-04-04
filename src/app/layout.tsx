@@ -5,7 +5,6 @@ import Providers from '@/components/Providers'
 import Navbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/Toast'
 
-
 const inter = Inter({subsets:["latin"]})
 
 export default function RootLayout({
