@@ -7,7 +7,6 @@ import ThemeToggle from "@/components/ThemeToggle";
 import MobileMenu from '@/components/MobileMenu'
 import { authOptions } from "@/lib/auth";
 
-
 const Navbar = async ({}) => {
     const session = await getServerSession(authOptions)
     return <div className="fixed backdrop-blur-sm bg-white/75 dark:bg-slate-900 z-50 top-0 left-0 right-0 h-20 border-b border-slate-300 dark:border-slate-700 shadow-sm flex items-center justify-between">
@@ -17,6 +16,8 @@ const Navbar = async ({}) => {
                 <Link href='/' className={buttonVariants({variant:"link"})}>
                     Addis Music
                 </Link>
+            </div>
+            <div>
             </div>
             
             <div className="md:hidden mr-5">
