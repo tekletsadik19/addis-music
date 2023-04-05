@@ -24,6 +24,7 @@ export default function RootLayout({
           {/* @ts-expect-error Server Component */}
           <Navbar/>
           
+          
         </Providers>
         {/*Allow More Height in Mobile Device*/}
         <div className='h-40 md:hidden'/>

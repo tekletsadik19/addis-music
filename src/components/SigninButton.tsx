@@ -24,6 +24,7 @@ const SigninButton: FC<SigninButtonProps> = () => {
                 type:"error"
             })
         }
+        setIsLoading(false)
     }
     return ( <Button onClick={signInWithGoogle} isLoading={isLoading}>Sign in</Button> );
 }
