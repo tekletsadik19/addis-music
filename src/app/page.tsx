@@ -5,6 +5,7 @@ import { type } from "os";
 import MusicForm from '@/components/MusicForm'
 import ScrollableList from '@/components/ui/ScrollableList'
 import Artwork from '@/components/player/ui/Artwork';
+import CreateLibrary from "@/components/music-lib/CreateLibray";
 
 export const metadata: Metadata = {
   title:"Addis Music | Home",
@@ -19,7 +20,7 @@ export default function Home() {
         <ScrollableList items={items} className="hidden md:flex" />
       </div>
       <div className="pl-0 mr-5 container mt-40 ">
-        <Artwork/>
+        <CreateLibrary/>
       </div>
       
     </div>

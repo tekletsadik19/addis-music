@@ -25,9 +25,12 @@
       "@/lib/*":["./src/lib/*"],
       "@/components/*":["./src/components/*"],
       "@/ui/*":["./src/components/ui/*"],
-      "@/utils/*":["./src/utils/*"]
+      "@/utils/*":["./src/utils/*"],
+      "@/reducers/*":["./src/reducers/*"],
+      "@/store/*":["./src/store/*"],
+
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/ui/SearchBox.jsx", "src/components/ui/SearchBox.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/ui/SearchBox.jsx", "src/components/ui/SearchBox.jsx", "src/components/music-lib/CreateLibray.js"],
   "exclude": ["node_modules"]
 }

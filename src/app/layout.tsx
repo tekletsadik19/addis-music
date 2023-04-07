@@ -13,19 +13,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={cn(
+      <html lang="en" className={cn(
       "bg-white text-slate-900 antialiased",
       inter.className
     )}>
       <body className="min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
-        <Providers>
-          <Toaster position='bottom-right'/>
-          {children}
-          {/* @ts-expect-error Server Component */}
-          <Navbar/>
-          
-          
-        </Providers>
+        
+          <Providers>
+            <Toaster position='bottom-right'/>
+            {children}
+            {/* @ts-expect-error Server Component */}
+            <Navbar/>
+          </Providers>
         {/*Allow More Height in Mobile Device*/}
         <div className='h-40 md:hidden'/>
       </body>
