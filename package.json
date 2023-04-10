@@ -53,6 +53,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.15.11",
+    "@types/redux-form": "^8.3.5",
     "autoprefixer": "^10.4.14",
     "mongoose": "^7.0.3",
     "postcss": "^8.4.21",

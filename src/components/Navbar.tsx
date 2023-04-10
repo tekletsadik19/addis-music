@@ -6,6 +6,7 @@ import SignoutButton from "@/components/SignoutButton"
 import ThemeToggle from "@/components/ThemeToggle";
 import MobileMenu from '@/components/MobileMenu'
 import { authOptions } from "@/lib/auth";
+import SearchBar from "@/components/SearchBar";
 
 const Navbar = async ({}) => {
     const session = await getServerSession(authOptions)
@@ -17,17 +18,18 @@ const Navbar = async ({}) => {
                     Addis Music
                 </Link>
             </div>
-            <div>
+            <div  className="hidden lg:flex gap-0 ml-5">
+                <SearchBar/>
             </div>
             
-            <div className="md:hidden mr-5">
-                <ThemeToggle/>
-            </div>
+            
             <div className="hidden md:flex gap-4 mr-5">
+                
                 <ThemeToggle/>
                 <Link href="/addis-hub" className={buttonVariants({variant:"ghost"})}>
                     Addis Hub
                 </Link>
+                
                 {
                 session?(
                     <>
