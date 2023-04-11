@@ -3,6 +3,7 @@ import Paragraph from "@/ui/Paragraph";
 import type { Metadata } from "next";
 import { type } from "os";
 import ScrollableList from '@/components/ui/ScrollableList'
+import CustomCard from "@/components/ui/CustomCard";
 
 export const metadata: Metadata = {
   title:"Addis Music | Home",
@@ -15,7 +16,8 @@ export default function Home() {
     <div className="relative h-screen flex overflow-x-hidden">
       
       <div className="pl-0 mr-5 container mt-40 ">
-        
+        <CustomCard header="Create Library" info="I miss you" btnText="Add"/>
+        <CustomCard header="Create Library" info="I miss you" btnText="Add"/>
       </div>
       
     </div>

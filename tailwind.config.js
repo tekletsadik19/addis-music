@@ -28,6 +28,11 @@ module.exports = {
         ...colors,
         'light-gold': '#f5bc51',
         'dark-gold': '#533519',
+        "coffee":"#754D42",
+        "indigo": "#6558d3",
+        "charcoal": "#a0a0a0",
+        "fair-pink":"#FFEDEC",
+        "governor":"#4133B7"
       },
     },
   },
