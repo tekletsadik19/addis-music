@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
 export const formVariant = cva(
-    ' inline-flex items-center justify-center rounded-md   transition-colors focus:outline-none disabled:opacity-50  disabled:pointer-events-none',
+    'my-2 inline-flex items-center justify-center rounded-md   transition-colors focus:outline-none disabled:opacity-50  disabled:pointer-events-none',
     {
       variants: {
         variant: {
@@ -14,6 +14,8 @@ export const formVariant = cva(
             'bg-slate-900 text-white dark:text-white hover:bg-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-100',
             search:
             'bg-slate-100 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 dark:bg-slate-800 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent',
+            ghost:
+            'bg-slate-300 dark:text-white hover:bg-slate-300 dark:bg-slate-500 dark:hover:bg-slate-700  data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent',   
         },
         size: {
           default: 'h-10 py-2 px-4',

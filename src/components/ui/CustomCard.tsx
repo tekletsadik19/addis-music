@@ -27,14 +27,13 @@ interface CardProps
     VariantProps<typeof cardVariants> {
       header?:string;
       info?:string;
-      btnText?:string;
 }
 
 const CardContainer = styled.div`
   box-sizing: border-box;
-  width: calc(350px / 1.5);
-  max-width: 300px;
+  width: calc(420px / 1.5);
   line-height: 1.5;
+  height: 300px;
   justify-content: space-between;
   gap: 0.5rem;
   border-radius: 16px;
@@ -52,7 +51,7 @@ const CardWrapper = styled.div`
 
 
 const CustomCard = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, size, header,info,btnText, ...props }, ref) => {
+  ({ className, size, header,children,info, ...props }, ref) => {
     return (
       <CardContainer className={cn(cardVariants({ size }), className)} {...props} ref={ref}>
           <CardWrapper >
@@ -62,9 +61,7 @@ const CustomCard = forwardRef<HTMLDivElement, CardProps>(
             <Paragraph size={'sm'} className='text-charcoal'>
               {info}
             </Paragraph>
-            <Button size={'lg'} variant={'sassy'} >
-              {btnText}
-            </Button>
+            {children}     
           </CardWrapper>
       </CardContainer>
     );

@@ -9,7 +9,7 @@ const headerVariants = cva(
         variants:{
             size:{
                 default:"text-4xl md:text-5x1 lg:text-6xl",
-                lg:"text-5xl md:text-6x1 lg:text-7xl",
+                lg:"text-5xl font-extrabold md:text-6x1 lg:text-7xl",
                 sm:"text-xl md:text-xl lg:text-2x1",
             }
         },

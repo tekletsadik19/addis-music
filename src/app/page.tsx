@@ -1,25 +1,45 @@
-import Button from "@/components/ui/Button";
-import Paragraph from "@/ui/Paragraph";
 import type { Metadata } from "next";
-import { type } from "os";
-import ScrollableList from '@/components/ui/ScrollableList'
-import CustomCard from "@/components/ui/CustomCard";
+import Header from "@/components/ui/Header";
+import Paragraph from "@/components/ui/Paragraph";
+import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title:"Addis Music | Home",
-  description:"Elegant Music Hub for Addis"
+  description:"Music Hub for Addis"
 }
 
 export default function Home() {
   const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8', 'Item 9', 'Item 10'];
   return (
-    <div className="relative h-screen flex overflow-x-hidden">
-      
-      <div className="pl-0 mr-5 container mt-40 ">
-        <CustomCard header="Create Library" info="I miss you" btnText="Add"/>
-        <CustomCard header="Create Library" info="I miss you" btnText="Add"/>
+    <div className='relative h-screen flex items-center justify-center overflow-x-hidden'>
+      <div className='container pt-32 max-w-7xl w-full mx-auto h-full'>
+        <div className='h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start'>
+            <Header size={'lg'} className="three-d text-black dark:text-light-gold">
+              Music That <br/> Moves You
+            </Header>
+            <Paragraph className="max-w-xl lg:text-left">
+              Discover the latest hits and hidden gems, 
+              create your own playlists. Join us today and experience the power of music that 
+              moves you! {" "}
+              <Link href={'/login'} className="underline underline-offset-2 text-black dark:text-light-gold" >Addis Music</Link>
+            </Paragraph>
+            <div className='relative w-full max-w-xl lg:max-w-xl lg:left-1/2 aspect-square lg:absolute'>
+              <Image
+                priority
+                className="img-shadow"
+                quality={100}
+                style={{objectFit:'contain'}}
+                fill
+                src={'/addis-music.png'}
+                alt="addis music"
+              />
+
+            </div>
+        </div>    
       </div>
-      
     </div>
   )
 }
+
+

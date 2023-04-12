@@ -4,7 +4,7 @@ import { FC, HTMLAttributes, forwardRef } from "react";
 import {Loader2} from "lucide-react";
 
 export const buttonVariants = cva(
-    'active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none dark:focus:ring-offset-slate-900',
+    'my-2 active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none dark:focus:ring-offset-slate-900',
     {
       variants: {
         variant: {
@@ -23,7 +23,7 @@ export const buttonVariants = cva(
         size: {
           default: 'h-10 py-2 px-4',
           sm: 'h-9 px-2 rounded-md',
-          lg: 'h-12 w-48 rounded-md',
+          lg: 'h-16 w-60 rounded-md',
         },
       },
       defaultVariants: {
