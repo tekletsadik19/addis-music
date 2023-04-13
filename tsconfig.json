@@ -31,6 +31,6 @@
 
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/ui/SearchBox.jsx", "src/components/ui/SearchBox.jsx", "src/components/music-lib/CreateLibray.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/ui/SearchBox.jsx", "src/components/ui/SearchBox.jsx", "src/components/music-lib/CreateLibray.js", "src/components/player/CreatePlaylist.jsx"],
   "exclude": ["node_modules"]
 }
