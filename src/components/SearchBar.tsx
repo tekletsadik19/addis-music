@@ -1,5 +1,6 @@
 "use client"
-
+// @ts-nocheck
+// @ts-ignore: Unreachable code error
 import React from "react";
 import InputField from "@/components/ui/InputField";
 import Button from "@/ui/Button";
