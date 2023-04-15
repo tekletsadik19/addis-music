@@ -11,8 +11,8 @@ export const metadata:Metadata={
 const AddisHub = () => {
 
     return ( 
-        <div className=' w-full mx-auto h-screen overflow-hidden'>
-            <main className="pt-32 flex">
+        <div className='pt-20 w-full mx-auto h-screen overflow-hidden'>
+            <main className="flex">
                 <SideBar/>
                 <Center/>
             </main>
