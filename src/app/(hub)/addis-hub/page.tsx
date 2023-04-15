@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import MediaControlCard from '@/components/player/MediaControlCard'
-import CreatePlaylist from "@/components/player/CreatePlaylist";
+import SideBar from "@/components/SideBar";
+import Center from "@/components/Center";
 export const metadata:Metadata={
     title:"Addis Music | Addis-Hub",
     description:"Music Hub for Addis"
@@ -9,11 +9,13 @@ export const metadata:Metadata={
 
 
 const AddisHub = () => {
-  
 
     return ( 
-        <div className='container sm:justify-center pt-32 w-full mx-auto h-full'>
-            <CreatePlaylist/>
+        <div className=' w-full mx-auto h-screen overflow-hidden'>
+            <main className="pt-32 flex">
+                <SideBar/>
+                <Center/>
+            </main>
         </div> 
     );
 }

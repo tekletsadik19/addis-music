@@ -14,9 +14,11 @@ const SigninButton: FC<SigninButtonProps> = () => {
     //Manage Loading state here with Redux
     const [isLoading,setIsLoading] = useState<boolean>(false);
     const signInWithGoogle = async()=>{
-        setIsLoading(true);
+       
         try {
+            setIsLoading(true);
             await signIn('google')
+            setIsLoading(false);
         } catch (error) {
             toast({
                 title:"Error Signing In",

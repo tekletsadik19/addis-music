@@ -18,6 +18,8 @@ model User {
   emailVerified   DateTime?   @map("verifiedAt")
   image           String?
   accounts        Account[]
+  library         Library[]   @relation("user_library")
+  favorites       Favorite[]  @relation("user_favorites")
   sessions        Session[]
   @@map("users")
 }
@@ -35,8 +37,7 @@ model Account {
   scope              String?
   id_token           String?  @db.String
   session_state      String?
-
-  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user               User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   @@unique([provider, providerAccountId])
   @@map("accounts")
 }
@@ -57,4 +58,40 @@ model VerificationToken {
   expires         DateTime    @map("expiresAt")
   @@unique([identifier, token])
   @@map("verification_tokens")
+}
+
+model Track {
+  id          String      @id @default(cuid()) @map("_id")
+  spotifyId   String      @unique
+  name        String
+  album       String
+  artist      String
+  imageUrl    String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  library     Library     @relation("track_library",fields: [trackId], references: [id])
+  trackId     String
+}
+
+model Favorite {
+  id          String      @id @default(cuid()) @map("_id")
+  userId      String      @map("user_id")
+  trackId     String      @map("track_id")
+  user        User        @relation("user_favorites", fields: [userId], references: [id])
+  createdAt   DateTime    @default(now()) 
+}
+
+model Library {
+  id          String      @id @default(cuid()) @map("_id")
+  spotifyId   String      @unique
+  name        String
+  album       String
+  artist      String
+  imageUrl    String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  user        User        @relation("user_library", fields: [userId], references: [id])
+  track       Track[]     @relation("track_library")
+  userId      String
+  trackId     String
 }

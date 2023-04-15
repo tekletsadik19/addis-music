@@ -19,6 +19,8 @@ export const buttonVariants = cva(
           ghost:
             'focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-400 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent',
           link: 'focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent',
+          link2: 'space-x-2 disabled:opacity-50 dark:hover:text-white bg-transparent dark:bg-transparent hover:text-black text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent',
+
         },
         size: {
           default: 'h-10 py-2 px-4',

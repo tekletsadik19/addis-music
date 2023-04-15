@@ -25,15 +25,13 @@ const Navbar = async ({}) => {
             <div className="hidden md:flex gap-4 mr-5">
                 
                 <ThemeToggle/>
-                <Link href="/addis-hub" className={buttonVariants({variant:"ghost"})}>
-                    Addis Hub
-                </Link>
+                
                 
                 {
                 session?(
                     <>
-                        <Link className={buttonVariants({variant:"ghost"})} href='/library'>
-                            Music Library
+                        <Link href="/addis-hub" className={buttonVariants({variant:"ghost"})}>
+                            Addis Hub
                         </Link>
                         <SignoutButton/>
                     </>
