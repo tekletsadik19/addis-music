@@ -27,7 +27,7 @@
       "@/ui/*":["./src/components/ui/*"],
       "@/utils/*":["./src/utils/*"],
       "@/reducers/*":["./src/reducers/*"],
-      "@/store/*":["./src/store/*"],
+      "@/redux/*":["./src/redux/*"],
 
     }
   },

@@ -14,7 +14,7 @@ const Center = ()=>{
     const { data: session } = useSession();
     return(
         <div className="flex-grow text-grey-500 overflow-y-scroll scrollbar-hide select-none relative" >
-            <header className="absolute right-10" >
+            <header className="absolute mt-5 right-10" >
                 <div className="flex items-center space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full pr-2">
                     <Image className="rounded-full p-1" src={session?.user.image}
                         alt="user image" height={40} width={40} />
@@ -23,12 +23,12 @@ const Center = ()=>{
                 </div>
             </header>
             <section
-                className={`m-5 flex-grow flex bg-slate-800 items-end space-x-7  h-80  pl-5 pb-5`}
+                className={`m-5 flex-grow flex items-end space-x-7  h-80  pl-5 pb-5`}
             >
-                {/* <img
-                className="h-44 w-44 shadow-2xl"
-                src={playlist?.images?.[0]?.url}
-                alt="album image"
+                {/* <Image
+                    className="h-44 w-44 shadow-2xl"
+                    src={playlist?.images?.[0]?.url}
+                    alt="album image"
                 /> */}
                 <div>
                 <p>PLAYLIST</p>

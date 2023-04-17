@@ -2,7 +2,7 @@
 import { ReactNode } from "react";
 import {ThemeProvider} from "next-themes";
 import { SessionProvider } from "next-auth/react";
-import {store} from '@/lib/store';
+import {store} from '@/redux/store';
 import { Provider } from 'react-redux';
 
 const Providers =  ({children}:{children:ReactNode}) => {
