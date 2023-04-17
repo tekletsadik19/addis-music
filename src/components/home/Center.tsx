@@ -13,7 +13,7 @@ import Songs from "@/components/Songs";
 const Center = ()=>{
     const { data: session } = useSession();
     return(
-        <div className="flex-grow text-grey-500 overflow-y-scroll scrollbar-hide select-none relative" >
+        <div className="flex-grow text-grey-500 overflow-y-scroll scrollbar-hide h-screen  select-none relative" >
             <header className="absolute mt-5 right-10" >
                 <div className="flex items-center space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full pr-2">
                     <Image className="rounded-full p-1" src={session?.user.image}
@@ -31,8 +31,8 @@ const Center = ()=>{
                     alt="album image"
                 /> */}
                 <div>
-                <p>PLAYLIST</p>
-                <h1 className="text-2xl md:text-3xl xl:text-5xl">Hey I did It Again</h1>
+                <Header>PLAYLIST</Header>
+                <Header className="text-2xl md:text-3xl xl:text-5xl">Hey I did It Again</Header>
                 </div>
             </section>
             <div>

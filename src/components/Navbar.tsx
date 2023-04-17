@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { buttonVariants } from "@/ui/Button";
 import SigninButton from "@/components/SigninButton"
-import SignoutButton from "@/components/SignoutButton"
+import SignoutButton from "@/components/auth/SignoutButton"
 import ThemeToggle from "@/components/ThemeToggle";
 import MobileMenu from '@/components/MobileMenu'
 import { authOptions } from "@/lib/auth";
@@ -32,6 +32,9 @@ const Navbar = async ({}) => {
                     <>
                         <Link href="/addis-hub" className={buttonVariants({variant:"ghost"})}>
                             Addis Hub
+                        </Link>
+                        <Link href="/discover" className={buttonVariants({variant:"ghost"})}>
+                            Discover
                         </Link>
                         <SignoutButton/>
                     </>

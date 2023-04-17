@@ -9,6 +9,7 @@ const Songs = ()=>{
                 <Song key={track.track.id} track={track} order={i} />
             ))} */}
             <Song/>
+            <Song/>
         </div>
     )
 }

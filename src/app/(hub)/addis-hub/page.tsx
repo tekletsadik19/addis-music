@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import SideBar from "@/components/SideBar";
-import Center from "@/components/Center";
+import Center from "@/components/home/Center";
 import MusicPlayer from "@/components/player/MusicPlayer";
 
 export const metadata:Metadata={
@@ -13,7 +13,7 @@ export const metadata:Metadata={
 const AddisHub = () => {
 
     return ( 
-        <div className='pt-20 w-full mx-auto h-screen overflow-hidden'>
+        <div className='pt-20 pb-40 w-full mx-auto h-screen overflow-hidden'>
             <main className="flex">
                 <SideBar/>
                 <Center/>

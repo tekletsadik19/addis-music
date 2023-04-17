@@ -24,22 +24,6 @@ class SideBar extends React.Component{
                     <hr className="border-t-[0.1px] border-gray-400"/>
                     <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
                     <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
-                    <Paragraph className="cursor-pointer pl-5">Playlist Name...</Paragraph>
                 </div>
             </div>
         )
