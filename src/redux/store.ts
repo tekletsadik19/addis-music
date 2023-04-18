@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import reducers from '@/redux/features';
+import {spotifyApi} from '@/redux/services/spotifyCore';
 
 export const store = configureStore({
   reducer: reducers,
+  middleware:(getDefaultMiddleware)=>getDefaultMiddleware().concat(spotifyApi.middleware)
 });
 
 

@@ -8,8 +8,6 @@ export default withAuth(
   async function middleware(req) {
     const pathname = req.nextUrl.pathname // relative path
 
-    
-
     // Manage route protection
     const token = await getToken({ req })
     const isAuth = !!token

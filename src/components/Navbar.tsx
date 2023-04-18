@@ -7,6 +7,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import MobileMenu from '@/components/MobileMenu'
 import { authOptions } from "@/lib/auth";
 import SearchBar from "@/components/SearchBar";
+import Discover from "@/components/discover/Discover";
 
 const Navbar = async ({}) => {
    
@@ -18,23 +19,21 @@ const Navbar = async ({}) => {
                     Addis Music
                 </Link>
             </div>
-            <div  className="hidden lg:flex gap-0 ml-5">
-                <SearchBar/>
-            </div>
-          
+            {
+                session?(
+                    <div  className="hidden lg:flex gap-0 ml-5">
+                        <SearchBar/>
+                    </div>
+                ):<></>
+            }
             <div className="hidden md:flex gap-4 mr-5">
                 
-                <ThemeToggle/>
-                
-                
+                <ThemeToggle/>                
                 {
                 session?(
                     <>
                         <Link href="/addis-hub" className={buttonVariants({variant:"ghost"})}>
                             Addis Hub
-                        </Link>
-                        <Link href="/discover" className={buttonVariants({variant:"ghost"})}>
-                            Discover
                         </Link>
                         <SignoutButton/>
                     </>

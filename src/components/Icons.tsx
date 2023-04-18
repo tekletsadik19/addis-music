@@ -4,6 +4,7 @@ import {
   Moon, 
   Sun,
   Laptop,
+  Compass
  } from 'lucide-react'
 
 export const Icons = {
@@ -12,6 +13,7 @@ export const Icons = {
   Sun,
   Moon,
   Laptop,
+  Compass
 }
 
 export default Icons
