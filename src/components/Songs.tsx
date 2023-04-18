@@ -1,15 +1,32 @@
 'use client'
 
 import Song from "@/components/Song";
+import {useGetPlaylistSongsQuery} from "@/redux/services/spotifyCore";
+import { useDispatch, useSelector } from 'react-redux';
+
 
 const Songs = ()=>{
+    {/* @ts-expect-error */}
+    const {data,isFetching,error} = useGetPlaylistSongsQuery();
+    const { activeSong, isPlaying } = useSelector((state) => state.player);
     return(
+        
         <div className="px-6 flex flex-col mt-3 space-y-2 pb-28 text-white">
-            {/* {playlist?.tracks.items.map((track, i) => (
-                <Song key={track.track.id} track={track} order={i} />
-            ))} */}
-            <Song/>
-            <Song/>
+            {
+
+                isFetching?<div></div>:
+                data?.items.map((song, i) => (
+                    <Song
+                      key={song.key}
+                      song={song.track}
+                      isPlaying={isPlaying}
+                      activeSong={activeSong}
+                      data={data}
+                      i={i}
+                    />
+                  ))
+                
+            }
         </div>
     )
 }

@@ -1,10 +1,10 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'; 
 
 
-export const spotifyApi = createApi({
+export const spotifyMetaApi = createApi({
     reducerPath:"spotifyApi",
     baseQuery:fetchBaseQuery({
-        baseUrl:"https://spotify23.p.rapidapi.com/",
+        baseUrl:"https://spotify-scraper.p.rapidapi.com/v1/",
         prepareHeaders:(headers)=>{
             headers.set('X-RapidAPI-Key',process.env.RAPID_API);
             return headers;
@@ -17,4 +17,4 @@ export const spotifyApi = createApi({
 
 export const {
     useGetPlaylistSongsQuery
-} = spotifyApi;
+} = spotifyMetaApi;

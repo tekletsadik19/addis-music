@@ -3,15 +3,19 @@ import React from 'react';
 
 const Track = ({ isPlaying, isActive, activeSong }) => (
   <div className="flex-1 flex items-center justify-start">
-    <div className={`${isPlaying && isActive ? 'animate-[spin_3s_linear_infinite]' : ''} hidden sm:block h-16 w-16 mr-4`}>
-      <Image src={activeSong?.images?.coverart} alt="cover art" className="rounded-full" />
+    <div className={`${isPlaying && isActive ? 'animate-[spin_3s_linear_infinite]' : ''} hidden sm:block mr-4`}>
+      <Image 
+        src={activeSong.album?.images[0].url ? activeSong.album?.images[0].url:"/addis-music.png"}
+        alt="cover art" className="rounded-full" 
+        width={80} height={80}
+      />
     </div>
     <div className="w-[50%]">
       <p className="truncate text-white font-bold text-lg">
-        {activeSong?.title ? activeSong?.title : 'No active Song'}
+        {activeSong?.name ? activeSong?.name : 'No active Song'}
       </p>
       <p className="truncate text-gray-300">
-        {activeSong?.subtitle ? activeSong?.subtitle : 'No active Song'}
+        {activeSong.album?.name ? activeSong?.album.name : 'No active Song'}
       </p>
     </div>
   </div>
