@@ -4,7 +4,7 @@ import Paragraph from "./ui/Paragraph";
 import { useTheme } from "next-themes";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/ui/DropdownMenu";
 import Button from "@/ui/Button";
-import Icons from "@/components/Icons";
+import Icons from "@/components/ui/Icons";
 
 interface ThemeToggleProps {
     

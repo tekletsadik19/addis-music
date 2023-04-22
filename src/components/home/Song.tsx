@@ -3,8 +3,8 @@ import { millisToMinutesAndSeconds } from '@/lib/time';
 import Image from 'next/image';
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import { playPause,setActiveSong} from '@/redux/features/playerSlice';
-import Paragraph from './ui/Paragraph';
+import { playPause,setActiveSong,setActivePlaylist} from '@/redux/features/playerSlice';
+import Paragraph from '../ui/Paragraph';
 import PlayPause from '@/components/PlayPause';
 
 {/* @ts-expect-error */}
@@ -17,13 +17,13 @@ const Song = ({song,i,isPlaying, activeSong, data})=>{
     };
 
     const handlePlayClick = () => {
-
         dispatch(setActiveSong({ song, data, i }));
+        dispatch(setActivePlaylist(data))
         dispatch(playPause(true));
     };
      
     return(
-        song?.album.name ? 
+        
         <div
             className="grid grid-cols-2 text-[#929292] bg-slate-200 dark:bg-slate-700 hover:text-white rounded-md mt-5 cursor-pointer"
             >    
@@ -31,7 +31,7 @@ const Song = ({song,i,isPlaying, activeSong, data})=>{
                 
                 <Image
                     src={song?.album.images[0].url}
-                    alt={song?.album.name}
+                    alt={song?.name}
                     height={50}
                     width={50}
                 />
@@ -47,7 +47,7 @@ const Song = ({song,i,isPlaying, activeSong, data})=>{
                 <Paragraph className="hidden md:inline w-40 lg:w-96 truncate">
                  {song?.album.name} 
                 </Paragraph>
-                <Paragraph>{millisToMinutesAndSeconds(song?.duration_ms)}</Paragraph> 
+                <Paragraph>{millisToMinutesAndSeconds(song?.duration_ms)}</Paragraph>  
                 <PlayPause 
                     isPlaying={isPlaying} 
                     song={song} 
@@ -56,7 +56,7 @@ const Song = ({song,i,isPlaying, activeSong, data})=>{
                     handlePlay={handlePlayClick}
                 />
             </div>
-        </div>:<></>
+        </div>
     )
 }
 

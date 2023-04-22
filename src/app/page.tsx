@@ -38,6 +38,8 @@ export default function Home() {
             </div>
         </div>    
       </div>
+      {/*Allow More Height in Mobile Device*/}
+      <div className='h-40 md:hidden'/>
     </div>
   )
 }

@@ -13,3 +13,19 @@ type Favorite = {
     trackId?: string
     userId?: string
 }
+
+type Library = {
+    id: string
+    spotifyId: string
+    name: string
+    album: string
+    artist: string
+    imageUrl: string
+}    
+
+type Todo = {
+    userId: number,
+    id: number,
+    title: string,
+    completed: boolean,
+}

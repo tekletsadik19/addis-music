@@ -2,7 +2,7 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/ui/DropdownMenu";
 import { genres } from "@/utils/constants";
 import Button from "@/ui/Button";
-import Icons from "@/components/Icons";
+import Icons from "@/components/ui/Icons";
 import Paragraph from "@/ui/Paragraph";
 
 const Discover = () => {

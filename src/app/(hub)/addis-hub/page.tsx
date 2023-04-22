@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SideBar from "@/components/SideBar";
+import SideBar from "@/components/home/SideBar";
 import Center from "@/components/home/Center";
 import MusicPlayer from "@/components/player/MusicPlayer";
 

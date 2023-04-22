@@ -1,17 +1,19 @@
 'use client'
 import React from "react";
 import Image from "next/image";
-import { shuffle } from 'lodash';
 import { useSession } from 'next-auth/react';
 import {ChevronDown} from 'lucide-react';
+import {useSelector } from 'react-redux';
+import {useGetTopChartsQuery} from "@/redux/services/spotifyCore";
 import Header from "@/ui/Header";
 import Paragraph from "@/ui/Paragraph";
-import Songs from "@/components/Songs";
+import TopSongs from "@/components/home/TopSongs";
 
 
 
 const Center = ()=>{
     const { data: session } = useSession();
+    
     return(
         <div className="flex-grow text-grey-500 overflow-y-scroll scrollbar-hide h-screen  select-none relative" >
             <header className="absolute mt-5 right-10" >
@@ -22,21 +24,8 @@ const Center = ()=>{
                     <Paragraph><ChevronDown className="h-5 w-5" /></Paragraph>
                 </div>
             </header>
-            <section
-                className={`m-5 flex-grow flex items-end space-x-7  h-80  pl-5 pb-5`}
-            >
-                {/* <Image
-                    className="h-44 w-44 shadow-2xl"
-                    src={playlist?.images?.[0]?.url}
-                    alt="album image"
-                /> */}
-                <div>
-                <Header>PLAYLIST</Header>
-                <Header className="text-2xl md:text-3xl xl:text-5xl">Hey I did It Again</Header>
-                </div>
-            </section>
             <div>
-                <Songs/>
+                <TopSongs/>
             </div>
         </div>
     )
