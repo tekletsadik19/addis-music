@@ -2,13 +2,15 @@
 import { Field,reduxForm } from "redux-form";
 import { useRouter, useSearchParams } from "next/navigation";
 import React,{useState}  from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import CustomCard from "@/components/ui/CustomCard";
 import InputField from "@/components/ui/InputField";
 import Button from "@/components/ui/Button";
 import {setShowLibraryModal} from '@/redux/features/playerSlice';
 import { toast } from "@/ui/Toast";
-
+import {
+	addLibrary,
+} from "@/redux/actions";
 
 const CreatePlaylist = (props)=>{
     const dispatch = useDispatch();
@@ -16,20 +18,11 @@ const CreatePlaylist = (props)=>{
     const handleLibModal = (showModal = false)=>{
         dispatch(setShowLibraryModal(showModal))
     }
+    const state = useSelector((state) => state.employee);
 
-    const fetchLibrary = async (url) => {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error("Failed to fetch posts");
-        }
-        return response.json();
+    const setLibrary = async (data) => {
+        dispatch(addLibrary(data));
     };
-
-    const { data, isLoading } = useSWR(
-        `/api/librarys`,
-        fetchLibrary,
-        { revalidateOnFocus: false }
-    );
 
     const renderError = ({error,touched})=>{
         if(error&&touched){
@@ -57,7 +50,7 @@ const CreatePlaylist = (props)=>{
     }
     
     const onSubmit = (value)=>{
-        console.log(data);
+        setLibrary(value)
     }
     
     return ( 

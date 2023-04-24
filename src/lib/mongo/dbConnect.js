@@ -8,11 +8,9 @@ const connection = {};
 	}
 
 	try {
-		const db = await mongoose.connect(process.env.MONGO_URI, {
+		const db = await mongoose.connect(process.env.DATABASE_URL, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
-			useCreateIndex: true,
-			useFindAndModify: false,
 		});
 
 		connection.isConnected = db.connections[0].readyState;

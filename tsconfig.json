@@ -28,6 +28,7 @@
       "@/utils/*":["./src/utils/*"],
       "@/reducers/*":["./src/reducers/*"],
       "@/redux/*":["./src/redux/*"],
+      "@/models/*":["./src/models/*"],
     }
   },
   "include": [
@@ -38,7 +39,7 @@
     "src/components/music-lib/CreateLibray.js", 
     "src/components/playlist/CreatePlaylist.jsx", 
     "src/lib/spotify.Js",  
-    "src/lib/mongo/client.js"  
-  ],
+    "src/lib/mongo/client.js", 
+    "src/redux/features/librarySlice.js"  ],
   "exclude": ["node_modules"]
 }
