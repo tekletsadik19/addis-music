@@ -3,7 +3,7 @@ import { millisToMinutesAndSeconds } from '@/lib/time';
 import Image from 'next/image';
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import { playPause,setActiveSong,setActivePlaylist} from '@/redux/features/playerSlice';
+import {playPause,setActiveSong,setActivePlaylist} from '@/redux/features/playerSlice';
 import Paragraph from '../ui/Paragraph';
 import PlayPause from '@/components/PlayPause';
 
@@ -25,9 +25,9 @@ const Song = ({song,i,isPlaying, activeSong, data})=>{
     return(
         
         <div
-            className="grid grid-cols-2 text-[#929292] bg-slate-200 dark:bg-slate-700 hover:text-white rounded-md mt-5 cursor-pointer"
+            className="m-0 grid grid-cols-2 text-[#929292] bg-slate-200 dark:bg-slate-700 hover:text-white rounded-md mt-5 cursor-pointer"
             >    
-            <div className="flex items-center pl-3 space-x-4 py-1">
+            <div className="flex items-center  sm:pl-1 space-x-4 ">
                 
                 <Image
                     src={song?.album.images[0].url}

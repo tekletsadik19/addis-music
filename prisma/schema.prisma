@@ -60,38 +60,23 @@ model VerificationToken {
   @@map("verification_tokens")
 }
 
-model Track {
-  id          String      @id @default(cuid()) @map("_id")
-  spotifyId   String      @unique
-  name        String
-  album       String
-  artist      String
-  imageUrl    String
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
-  library     Library     @relation("track_library",fields: [trackId], references: [id])
-  trackId     String
-}
-
 model Favorite {
   id          String      @id @default(cuid()) @map("_id")
   userId      String      @map("user_id")
-  trackId     String      @map("track_id")
+  trackId     String[]     
   user        User        @relation("user_favorites", fields: [userId], references: [id])
   createdAt   DateTime    @default(now()) 
+  @@map("favorite")
 }
 
 model Library {
   id          String      @id @default(cuid()) @map("_id")
-  spotifyId   String      @unique
   name        String
-  album       String
-  artist      String
   imageUrl    String
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
   user        User        @relation("user_library", fields: [userId], references: [id])
-  track       Track[]     @relation("track_library")
   userId      String
-  trackId     String
+  trackId     String[]
+  @@map("library")
 }

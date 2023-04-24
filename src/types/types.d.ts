@@ -1,4 +1,4 @@
-type Track = {
+type User = {
     id: number
     name?: string
     genre?: string
@@ -16,11 +16,11 @@ type Favorite = {
 
 type Library = {
     id: string
-    spotifyId: string
     name: string
-    album: string
-    artist: string
     imageUrl: string
+    userId: string
+    createdAt:Date
+    updatedAt:Date
 }    
 
 type Todo = {

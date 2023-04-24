@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SideBar from "@/components/home/SideBar";
 import Center from "@/components/home/Center";
 import MusicPlayer from "@/components/player/MusicPlayer";
+import { useDispatch, useSelector } from 'react-redux';
 
 export const metadata:Metadata={
     title:"Addis Music | Addis-Hub",
@@ -11,7 +12,7 @@ export const metadata:Metadata={
 
 
 const AddisHub = () => {
-
+    
     return ( 
         <div className='pt-20 pb-40 w-full mx-auto h-screen overflow-hidden'>
             <main className="flex">

@@ -1,24 +1,47 @@
 'use client'
+import { Field,reduxForm } from "redux-form";
+import { useRouter, useSearchParams } from "next/navigation";
+import React,{useState}  from "react";
+import { useDispatch } from 'react-redux';
 import CustomCard from "@/components/ui/CustomCard";
 import InputField from "@/components/ui/InputField";
 import Button from "@/components/ui/Button";
-import { Field,reduxForm } from "redux-form";
-import React  from "react";
+import {setShowLibraryModal} from '@/redux/features/playerSlice';
 import { toast } from "@/ui/Toast";
 
-class CreatePlaylist extends React.Component{
-    renderError({error,touched}){
+
+const CreatePlaylist = (props)=>{
+    const dispatch = useDispatch();
+    const {handleSubmit} = props;
+    const handleLibModal = (showModal = false)=>{
+        dispatch(setShowLibraryModal(showModal))
+    }
+
+    const fetchLibrary = async (url) => {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Failed to fetch posts");
+        }
+        return response.json();
+    };
+
+    const { data, isLoading } = useSWR(
+        `/api/librarys`,
+        fetchLibrary,
+        { revalidateOnFocus: false }
+    );
+
+    const renderError = ({error,touched})=>{
         if(error&&touched){
             toast({
                 title:error,
                 message:"please add name to your library",
                 type:"error",
-                
+
             })
         }
-    }
-
-    renderInput = ({input,placeHolder,meta})=>{
+    } 
+    const renderInput = ({input,placeHolder,meta})=>{
         return (
             <div>
                 <InputField 
@@ -28,39 +51,39 @@ class CreatePlaylist extends React.Component{
                     placeHolder={placeHolder}
                 >
                 </InputField>
-                {this.renderError(meta)}
+                {renderError(meta)}
             </div>
         );
     }
-
-    onSubmit(formValues){
-        
+    
+    const onSubmit = (value)=>{
+        console.log(data);
     }
-
-    render() {
-        return ( 
-            <>
-                <CustomCard header="Create Library">
-                    <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
-                        <Field name={'name'} placeHolder="Name" component={this.renderInput}/>
-                        <Field name={'info'} placeHolder="Info" component={this.renderInput}/>
-                        <Button size={'lg'} variant={'sassy'} >
-                            Add
-                        </Button>
-                    </form>
-                </CustomCard>
-               
-            </> 
-
-        );
-    }
+    
+    return ( 
+        <CustomCard header="Create Library">
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <Field name={'name'} placeHolder="Name" component={renderInput}/>
+                <Button size={'lg'} variant={'accept'}>
+                    Add
+                </Button>
+            </form>
+            <Button 
+                    size={'lg'} 
+                    variant={'err'} 
+                    onClick={()=>handleLibModal(false)}
+            >
+                Decline
+            </Button>
+        </CustomCard>
+    );
 }
- 
+
+
 const validate = (formValues)=>{
     const errors = {};
     if(!formValues.name){
         errors.name = "you have to name your library";
-       
     }
     return errors;
 }

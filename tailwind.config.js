@@ -32,7 +32,9 @@ module.exports = {
         "indigo": "#6558d3",
         "charcoal": "#a0a0a0",
         "fair-pink":"#FFEDEC",
-        "governor":"#4133B7"
+        "governor":"#4133B7",
+        "error-red":"#FF1E1E",
+        "accept-green":"#3EC70B"
       },
       animation: {
         slideup: 'slideup 1s ease-in-out',

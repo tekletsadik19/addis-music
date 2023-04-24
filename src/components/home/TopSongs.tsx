@@ -13,11 +13,11 @@ const TopSongs = ()=>{
         return <Loader title={'Loading Playlist'}/>;
     }
     const playlistData = data?.public_playlists[0];
-    const playlistId  =  playlistData.uri.split(":").pop();
+    const playlistId  =  playlistData?.uri.split(":").pop();
     return(
-        <div>
+        <div className='sm:m-0'>
             <section
-                className={`m-5 flex-grow flex items-end space-x-7  h-80  pl-5 pb-5`}
+                className={`sm:m-1 m-5  sm:pl-2 flex-grow flex items-end space-x-7  h-80  pl-5 pb-5`}
             >
                 <Image
                     className="shadow-2xl"
@@ -33,7 +33,7 @@ const TopSongs = ()=>{
                 </Header>
                 </div>
             </section>
-            <div className="px-6 flex flex-col mt-3 space-y-2 pb-28 text-white">
+            <div className="sm:mx-0 px-6  flex flex-col mt-3 space-y-2 pb-28 text-white">
               <Songs playlistID={playlistId}/> 
             </div>     
         </div> 

@@ -13,7 +13,7 @@ const Songs = ({playlistID})=>{
         return <Loader title={'Loading Songs'}/>;
     }
     return(
-        <div className="px-6 flex flex-col mt-3 space-y-2 pb-28 text-white">
+        <div className="sm:m-0 px-6 flex flex-col mt-3 space-y-2 pb-28 text-white">
             {
                 data?.items.map((song, i) => (
                     <Song

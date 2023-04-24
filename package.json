@@ -52,6 +52,7 @@
     "redux-saga": "^1.2.3",
     "simplebar-react": "^3.2.3",
     "swiper": "^9.2.2",
+    "swr": "^2.1.4",
     "tailwind-merge": "^1.11.0",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
