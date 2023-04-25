@@ -1,6 +1,5 @@
 "use client"
 import { FC } from "react";
-import Paragraph from "./ui/Paragraph";
 import { useTheme } from "next-themes";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/ui/DropdownMenu";
 import Button from "@/ui/Button";

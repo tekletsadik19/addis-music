@@ -1,6 +1,6 @@
 'use client'
 import { Field,reduxForm } from "redux-form";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSession } from 'next-auth/react';
 import React,{useState}  from "react";
 import { useDispatch,useSelector } from 'react-redux';
 import CustomCard from "@/components/ui/CustomCard";
@@ -15,13 +15,16 @@ import {
 const CreatePlaylist = (props)=>{
     const dispatch = useDispatch();
     const {handleSubmit} = props;
+    
+    const { data: session } = useSession();
+
     const handleLibModal = (showModal = false)=>{
         dispatch(setShowLibraryModal(showModal))
     }
-    const state = useSelector((state) => state.employee);
-
     const setLibrary = async (data) => {
-        dispatch(addLibrary(data));
+        const newData = { ...data, userId: session?.user.id };
+        dispatch(addLibrary(newData));
+        dispatch(setShowLibraryModal(false))
     };
 
     const renderError = ({error,touched})=>{

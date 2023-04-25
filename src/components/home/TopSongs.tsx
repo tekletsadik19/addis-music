@@ -15,9 +15,9 @@ const TopSongs = ()=>{
     const playlistData = data?.public_playlists[0];
     const playlistId  =  playlistData?.uri.split(":").pop();
     return(
-        <div className='sm:m-0'>
+        <div className=''>
             <section
-                className={`sm:m-1 m-5  sm:pl-2 flex-grow flex items-end space-x-7  h-80  pl-5 pb-5`}
+                className={`m-5  flex-grow flex items-end space-x-7  h-80  pl-20 pb-5`}
             >
                 <Image
                     className="shadow-2xl"

@@ -24,29 +24,28 @@ function* watchFetchLibrarys() {
 }
 
 function* addLibrary(action) {
-	console.log("Mahi I Love You Morethan anything and everything in this Universe")
-	console.log(action.payload)
-	// try {
-	// 	const response = yield fetch("/api/librarys", {
-	// 		method: "POST",
-	// 		headers: {
-	// 			"Content-Type": "application/json",
-	// 		},
-	// 		body: JSON.stringify(action.payload),
-	// 	});
+	
+	try {
+		const response = yield fetch("/api/librarys", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(action.payload),
+		});
 
-	// 	const newLibrary = yield response.json();
+		const newLibrary = yield response.json();
 
-	// 	yield put({
-	// 		type: t.LIBRARY_ADD_SUCCEEDED,
-	// 		payload: newLibrary.data,
-	// 	});
-	// } catch (error) {
-	// 	yield put({
-	// 		type: t.LIBRARY_ADD_FAILED,
-	// 		payload: error.message,
-	// 	});
-	// }
+		yield put({
+			type: t.LIBRARY_ADD_SUCCEEDED,
+			payload: newLibrary.data,
+		});
+	} catch (error) {
+		yield put({
+			type: t.LIBRARY_ADD_FAILED,
+			payload: error.message,
+		});
+	}
 }
 
 function* watchAddLibrary() {

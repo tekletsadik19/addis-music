@@ -17,13 +17,6 @@ const Navbar = async ({}) => {
                     Addis Music
                 </Link>
             </div>
-            {
-                session?(
-                    <div  className="hidden lg:flex gap-0 ml-5">
-                        <SearchBar/>
-                    </div>
-                ):<></>
-            }
             <div className="hidden md:flex gap-4 mr-5">
                 
                 <ThemeToggle/>                

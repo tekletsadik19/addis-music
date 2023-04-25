@@ -1,11 +1,13 @@
 'use client'
 import { millisToMinutesAndSeconds } from '@/lib/time';
 import Image from 'next/image';
-import Link from "next/link";
+import Button from "@/ui/Button";
 import { useDispatch } from "react-redux";
+import { AddCircleOutline } from "@mui/icons-material";
 import {playPause,setActiveSong,setActivePlaylist} from '@/redux/features/playerSlice';
 import Paragraph from '../ui/Paragraph';
 import PlayPause from '@/components/PlayPause';
+import AddTrackToLibrary from "@/components/playlist/AddTrackToLibrary"
 
 {/* @ts-expect-error */}
 
@@ -47,7 +49,10 @@ const Song = ({song,i,isPlaying, activeSong, data})=>{
                 <Paragraph className="hidden md:inline w-40 lg:w-96 truncate">
                  {song?.album.name} 
                 </Paragraph>
-                <Paragraph>{millisToMinutesAndSeconds(song?.duration_ms)}</Paragraph>  
+                <Paragraph className='hidden md:inline'>{millisToMinutesAndSeconds(song?.duration_ms)}</Paragraph>  
+                
+                <AddTrackToLibrary song={song}/>
+                
                 <PlayPause 
                     isPlaying={isPlaying} 
                     song={song} 

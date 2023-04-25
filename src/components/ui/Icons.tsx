@@ -4,6 +4,7 @@ import {
   Moon, 
   Sun,
   Laptop,
+  Trash,
   Compass
  } from 'lucide-react'
 
@@ -13,6 +14,7 @@ export const Icons = {
   Sun,
   Moon,
   Laptop,
+  Trash,
   Compass
 }
 

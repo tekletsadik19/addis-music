@@ -8,7 +8,7 @@ const LibrarySchema = new mongoose.Schema({
 	},
 	userId: {
 		type: String,
-		required: [true, "Library Name is required!"],
+		required: [true, "User Id is required!"],
 		trim: true,
 	},
 	imageUrl: {
