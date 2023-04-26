@@ -26,7 +26,7 @@ const Player = ({ activeSong, isPlaying, volume, seekTime, onEnded, onTimeUpdate
       url={activeSong?.sharing_info?.share_url}
       playing={true}
       controls={true}
-      volume={0.8}
+      volume={volume}
     />
   );
 };

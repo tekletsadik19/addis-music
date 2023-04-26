@@ -1,7 +1,7 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'; 
 
 const getSpotifyKey = ()=>{
-    const spotifyApiKey = process.env.SPOTIFY_RAPID_API_KEY;
+    const spotifyApiKey = "82ab688612mshb3728c18181c028p1cbf13jsn5ca48076390e";
 
     if(!spotifyApiKey){
         throw new Error("No APIKey For Spotify Set");

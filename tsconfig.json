@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -20,26 +24,49 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/styles/*":["./src/styles/*"],
-      "@/lib/*":["./src/lib/*"],
-      "@/components/*":["./src/components/*"],
-      "@/ui/*":["./src/components/ui/*"],
-      "@/utils/*":["./src/utils/*"],
-      "@/reducers/*":["./src/reducers/*"],
-      "@/redux/*":["./src/redux/*"],
-      "@/models/*":["./src/models/*"],
-    }
+      "@/*": [
+        "./src/*"
+      ],
+      "@/styles/*": [
+        "./src/styles/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/ui/*": [
+        "./src/components/ui/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/reducers/*": [
+        "./src/reducers/*"
+      ],
+      "@/redux/*": [
+        "./src/redux/*"
+      ],
+      "@/models/*": [
+        "./src/models/*"
+      ]
+    },
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts", "**/*.tsx",
-    ".next/types/**/*.ts", 
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
     "src/components/ui/SearchBox.jsx",
-    "src/components/music-lib/CreateLibray.js", 
-    "src/components/playlist/CreatePlaylist.jsx", 
-    "src/lib/spotify.Js",  
-    "src/lib/mongo/client.js", 
-    "src/redux/features/librarySlice.js"  ],
-  "exclude": ["node_modules"]
+    "src/components/music-lib/CreateLibray.js",
+    "src/components/playlist/CreatePlaylist.jsx",
+    "src/lib/spotify.Js",
+    "src/lib/mongo/client.js",
+    "src/redux/features/librarySlice.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
