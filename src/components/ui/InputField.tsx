@@ -46,7 +46,6 @@ const InputField = forwardRef<HTMLInputElement,FieldProps>(
         {...props}
         placeholder={placeHolder}
         onChange={props.onChange}
-        value={props.value}
         />       
     );
 })
