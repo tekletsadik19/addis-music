@@ -3,7 +3,7 @@
   <h1>Addis Music</h1>
   
   <p>
-  Addis Music with React Monogo NEXT.JS (Middleware, Spotify API, Tailwind, NextAuth, Redux, Redux-Toolkit,Saga,Emotion)
+  Addis Music with React Monogo NEXT.JS (Middleware, Spotify API, Tailwind, NextAuth,  Redux, Redux-Toolkit, Saga, Emotion)
   </p>
 </div>
 
