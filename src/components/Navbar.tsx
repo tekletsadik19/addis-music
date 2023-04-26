@@ -5,7 +5,7 @@ import SigninButton from "@/components/auth/SigninButton"
 import SignoutButton from "@/components/auth/SignoutButton"
 import ThemeToggle from "@/components/ThemeToggle";
 import { authOptions } from "@/lib/auth";
-import SearchBar from "@/components/SearchBar";
+import MobileMenu from "@/components/MobileMenu";
 
 const Navbar = async ({}) => {
    
@@ -17,8 +17,10 @@ const Navbar = async ({}) => {
                     Addis Music
                 </Link>
             </div>
+            <div className="md:hidden mr-10">
+                <ThemeToggle/> 
+            </div>
             <div className="hidden md:flex gap-4 mr-5">
-                
                 <ThemeToggle/>                
                 {
                 session?(
@@ -32,6 +34,7 @@ const Navbar = async ({}) => {
                 }
             </div>
         </div>
+        <MobileMenu/>
     </div>;
 }
  

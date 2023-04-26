@@ -33,7 +33,7 @@ const SideBar = ()=>{
         dispatch(deleteLibrary(_id));
     }
     return (
-        <div className="hidden md:flex text-grey-500 overflow-y-scroll scrollbar-hide h-screen" >
+        <div>
             <div className="space-y-4">
                 <Button 
                     variant={'link2'} 

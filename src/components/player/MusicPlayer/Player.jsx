@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, useEffect } from 'react';
-
+import ReactPlayer from 'react-player';
 const Player = ({ activeSong, isPlaying, volume, seekTime, onEnded, onTimeUpdate, onLoadedData, repeat }) => {
   const ref = useRef(null);
   // eslint-disable-next-line no-unused-expressions
@@ -22,13 +22,11 @@ const Player = ({ activeSong, isPlaying, volume, seekTime, onEnded, onTimeUpdate
   }, [seekTime]);
 
   return (
-    <audio
-      src={activeSong?.sharing_info?.share_url}
-      ref={ref}
-      loop={repeat}
-      onEnded={onEnded}
-      onTimeUpdate={onTimeUpdate}
-      onLoadedData={onLoadedData}
+    <ReactPlayer
+      url={activeSong?.sharing_info?.share_url}
+      playing={true}
+      controls={true}
+      volume={0.8}
     />
   );
 };

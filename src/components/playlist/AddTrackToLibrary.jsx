@@ -1,6 +1,5 @@
 "use client"
 import React,{ useEffect } from "react";
-import { useTheme } from "next-themes";
 import { AddCircleOutline } from "@mui/icons-material";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/ui/DropdownMenu";
 import Button from "@/ui/Button";
@@ -8,7 +7,6 @@ import Paragraph from "@/ui/Paragraph";
 import { useDispatch,useSelector } from 'react-redux';
 import {
 	fetchLibrarys,
-	setSelectedLibrary,
     updateLibrary
 } from "@/redux/actions";
 
@@ -21,8 +19,9 @@ const AddTrackToLibrary = ({song}) => {
 	useEffect(() => {
 		dispatch(fetchLibrarys());
 	}, [dispatch]);
-    const handleSelectedLibrary = (_id)=>{
-        dispatch(setSelectedLibrary(_id));
+    const handleSelectedLibrary = (library,song)=>{
+        const updatedLibrary = { ...library, trackId: [...library.trackId,song.id] };
+        dispatch(updateLibrary(updatedLibrary))
     }
     return (
         <DropdownMenu>
@@ -34,10 +33,10 @@ const AddTrackToLibrary = ({song}) => {
             
             <DropdownMenuContent align="end" forceMount>
                 {
-                state.libraryList?.map(({ _id, name }) => (
-                    <DropdownMenuItem key={_id} onClick={()=>handleSelectedLibrary(_id)}>
+                state.libraryList?.map((library) => (
+                    <DropdownMenuItem key={library._id} onClick={()=>handleSelectedLibrary(library,song)}>
                         <Paragraph  className="cursor-pointer pl-5 pt-1">
-                            { name }
+                            { library.name }
                         </Paragraph>
                     </DropdownMenuItem>
 				))

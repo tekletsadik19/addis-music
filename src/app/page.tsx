@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8', 'Item 9', 'Item 10'];
   return (
     <div className='relative h-screen flex items-center justify-center overflow-x-hidden'>
       <div className='container pt-32 max-w-7xl w-full mx-auto h-full'>
@@ -21,8 +20,7 @@ export default function Home() {
             <Paragraph className="max-w-xl lg:text-left">
               Discover the latest hits and hidden gems, 
               create your own playlists. Join us today and experience the power of music that 
-              moves you! {" "}
-              <Link href={'/login'} className="underline underline-offset-2 text-black dark:text-light-gold" >Addis Music</Link>
+              moves you!
             </Paragraph>
             <div className='relative w-full max-w-xl lg:max-w-xl lg:left-1/2 aspect-square lg:absolute'>
               <Image
