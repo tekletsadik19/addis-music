@@ -1,6 +1,4 @@
 <div align="center">
-
-  <img src="https://isamoreira.com/wp-content/uploads/2020/12/Spotify-logo-2048x616.png" alt="logo" width="400" height="auto" />
   
   <h1>Addis Music</h1>
   
