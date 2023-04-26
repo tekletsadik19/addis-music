@@ -1,5 +1,5 @@
-import loader from '@/utils/loader.svg';
+import  loader from '@/utils/loader.svg';
 
 export {
-  loader,
+  loader
 };
