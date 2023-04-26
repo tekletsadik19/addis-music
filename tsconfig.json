@@ -65,7 +65,7 @@
     "src/lib/spotify.Js",
     "src/lib/mongo/client.js",
     "src/redux/features/librarySlice.js"
-, "src/components/ui/InputField.jsx", "src/components/home/Songs.jsx", "src/components/home/Song.jsx", "src/components/home/SideBar.jsx", "src/components/home/Center.jsx", "src/components/Songs.jsx"  ],
+, "src/components/ui/InputField.jsx", "src/components/home/Songs.jsx", "src/components/home/Song.jsx", "src/components/home/SideBar.jsx", "src/components/home/Center.jsx", "src/components/Songs.jsx", "src/utils/loader.js"  ],
   "exclude": [
     "node_modules"
   ]
