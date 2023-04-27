@@ -9,7 +9,7 @@
 
 <br />
 
-## <a href="https://" target="_blank">LIVE DEMO 💥</a>
+## <a href="https://addis-music-sigma.vercel.app/" target="_blank">LIVE DEMO 💥</a>
 
 ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
 ![forthebadge](https://forthebadge.com/images/badges/for-you.svg)
